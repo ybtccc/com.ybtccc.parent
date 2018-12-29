@@ -8,3 +8,9 @@ eureka:
 spring:
   application:
     name: com.ybtccc.admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

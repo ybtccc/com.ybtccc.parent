@@ -3,12 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://re.ybtccc.com/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
 spring:
   application:
     name: com.ybtccc.web
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
