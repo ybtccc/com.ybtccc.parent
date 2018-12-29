@@ -1,0 +1,31 @@
+server:
+  port: 9093
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://re.ybtccc.com/eureka/
+spring:
+  application:
+    name: com.ybtccc.gateway
+  cloud:
+    gateway:
+      routes:
+      - id: redirect
+        uri: http://www.163.com
+        predicates:
+        - Path=/163
+      - id: rewriter
+        uri: http://127.0.0.1:9091/act/user
+        predicates:
+        - Host=web.ybtccc.com**
+        - Path=/act/**
+      - id: router
+        uri: http://127.0.0.1:9091
+        predicates:
+        - Host=web.ybtccc.com**
+        filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 2
+            redis-rate-limiter.burstCapacity: 2
+

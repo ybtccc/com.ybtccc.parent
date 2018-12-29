@@ -1,0 +1,16 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: com.ybtccc.registry
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://47.75.9.53:8761/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 15000
+  instance:
+    prefer-ip-address: true

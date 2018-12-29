@@ -1,0 +1,10 @@
+
+server:
+  port: 9090
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://re.ybtccc.com/eureka/
+spring:
+  application:
+    name: com.ybtccc.service

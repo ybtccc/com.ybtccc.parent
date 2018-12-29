@@ -1,0 +1,14 @@
+server:
+  port: 9091
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://re.ybtccc.com/eureka/
+spring:
+  application:
+    name: com.ybtccc.web
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
